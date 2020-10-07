@@ -1,0 +1,42 @@
+.mod-navbar {
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+  // background-color: $shadow;
+  // opacity: 0.97;
+
+  .logo-white {
+    width: 100px;
+  }
+
+  li {
+    padding: 5px 0;
+  }
+  .navbar-toggler {
+    background-color: $blue;
+  }
+}
+
+// @media (min-width: $md) {
+//   .mod-navbar {
+//     .logo-white {
+//       width: 50px;
+//     }
+//   }
+// }
+
+// @media (min-width: $lg) {
+//   .mod-navbar {
+//     .logo-white {
+//       width: 100px;
+//     }
+//   }
+// }
+
+// @media (min-width: $xl) {
+//   .mod-navbar {
+//     .logo-white {
+//       width: 100px;
+//     }
+//   }
+// }
