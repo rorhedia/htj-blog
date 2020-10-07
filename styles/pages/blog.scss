@@ -1,0 +1,82 @@
+.blog-header {
+  background-image: url("../../public/images/circulo-28.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: $shadow;
+  height: 40vh;
+  top: -20px;
+  display: flex;
+  align-items: center;
+
+  .header-text-container {
+    width: 100%;
+    padding-left: 8%;
+  }
+
+  .header-title {
+    margin-top: 15px;
+    color: $white;
+    font-weight: 800;
+  }
+}
+
+.blog-content {
+  margin-top: 50px;
+
+  .card-article {
+    a {
+      text-decoration: none;
+
+      h3 {
+        color: black;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    .article-image {
+      width: 100%;
+    }
+
+    .card-author {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+
+      p {
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  .blog-header {
+    height: 45vh;
+
+    .header-title {
+      margin-top: 15px;
+      color: $white;
+      font-weight: 900;
+      font-size: 4.5em;
+    }
+  }
+
+  .blog-content {
+    margin-top: 50px;
+
+    .row {
+      padding: 0 8vw;
+    }
+
+    .article-image {
+      width: 100%;
+    }
+  }
+}
