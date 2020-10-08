@@ -24,7 +24,21 @@ function Contacto({ countries }) {
     e.preventDefault();
 
     const response = await addComment(formData);
-    console.log(formData, response);
+
+    if (response.success === true) {
+      // document.getElementById("comment-form").reset();
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        country_id: "",
+        message: "",
+      });
+    } else {
+      alert(response.error);
+    }
+
+    // console.log(formData, response);
   };
 
   const { name, email, phone, country_id, message } = formData;
