@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { formatName, formatDate, limitText } from "../lib/functions";
 
 export default function PostArticle({
   id,
@@ -10,26 +11,6 @@ export default function PostArticle({
   name,
 }) {
   const router = useRouter();
-
-  const limitText = (text) => {
-    let textArr = text.split(" ");
-    textArr = textArr.filter((word, idx) => idx <= 15);
-
-    return textArr.join(" ") + "...";
-  };
-
-  const formatDate = (date) => {
-    let dateArr = new Date(date);
-    dateArr = dateArr.toString().split(" ");
-
-    return `${dateArr[1]} ${dateArr[2]}, ${dateArr[3]}`;
-  };
-
-  const formatName = (name) => {
-    let nameArr = name.split(" ");
-
-    return nameArr[0] + " " + nameArr[1].charAt(0).toUpperCase() + ".";
-  };
 
   const handleClick = (e) => {
     e.preventDefault();

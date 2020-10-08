@@ -5,7 +5,7 @@
   background-position: right;
   background-color: $shadow;
   height: 40vh;
-  top: -20px;
+  // top: -20px;
   display: flex;
   align-items: center;
 
@@ -52,6 +52,53 @@
       p {
         margin: 0 5px;
       }
+    }
+  }
+}
+
+.aside-search {
+  display: flex;
+  justify-content: center;
+
+  .comp-input-search {
+    width: 100%;
+    border: 2px solid $shadow;
+    padding: 10px;
+  }
+}
+
+.aside-filter {
+  form {
+    input {
+      display: block;
+    }
+  }
+}
+
+.aside-popular-posts {
+  .post-container {
+    display: flex;
+
+    .post-position {
+      width: 25%;
+      text-align: center;
+      a {
+        color: #c8c8c8;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #474747;
+      font-weight: bold;
+    }
+
+    small {
+      color: #c8c8c8;
+    }
+
+    .post-title{
+      margin: 0;
     }
   }
 }
