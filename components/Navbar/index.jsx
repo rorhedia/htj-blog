@@ -13,6 +13,12 @@ export default function CustomNavbar() {
   useEffect(() => {
     const navbar = document.querySelector(".mod-navbar");
 
+    if (router.pathname != "/contacto") {
+      navbar.classList.add("other-section");
+    } else {
+      navbar.classList.add("contact-section");
+    }
+
     window.addEventListener("scroll", function () {
       let top = window.scrollY;
 
@@ -40,11 +46,13 @@ export default function CustomNavbar() {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-aut text-muted" navbar>
-            <CustomLink path="/nosotros">Nosotros</CustomLink>
+            <CustomLink path="/">Nosotros</CustomLink>
             <CustomLink path="/que-hacemos">¿Qué hacemos?</CustomLink>
             <CustomLink path="/proyectos">Proyectos</CustomLink>
             <CustomLink path="/contacto">Contacto</CustomLink>
-            <CustomLink path="/blog">Blog</CustomLink>
+            <CustomLink className="btn-nav-blue" path="/blog">
+              Blog
+            </CustomLink>
           </Nav>
         </Collapse>
       </Navbar>

@@ -3,40 +3,109 @@
   top: -1px;
   z-index: 10;
 
+  &.other-section {
+    nav{
+      background-color:$shadow;
+      a{
+        color:white;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  &.contact-section {
+    nav{
+      background-color:white;
+      a{
+        color:$shadow;
+        padding: 10px 0;
+      }
+    }
+  }
+
   &.bg-color {
     background-color: $shadow;
     // background-color: #AD310B;
-    -webkit-transition: background-color 500ms linear;
-    -ms-transition: background-color 500ms linear;
-    transition: background-color 500ms linear;
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
   }
 
   &.bg-color-white {
     background-color: white;
-    -webkit-transition: background-color 500ms linear;
-    -ms-transition: background-color 500ms linear;
-    transition: background-color 500ms linear;
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
   }
 
   .logo-white {
-    width: 100px;
+    width: 140px;
   }
 
-  li {
-    padding: 5px 0;
-  }
   .navbar-toggler {
-    background-color: $blue;
+    background-color: white;
   }
 }
 
-// @media (min-width: $md) {
-//   .mod-navbar {
-//     .logo-white {
-//       width: 50px;
-//     }
-//   }
-// }
+@media (min-width: $md) {
+  .btn-nav-blue {
+    background-color: $blue;
+  }
+
+  .mod-navbar {
+    &.other-section {
+      .collapse.navbar-collapse {
+        display: flex;
+        justify-content: flex-end;
+
+        ul {
+          li {
+            // padding: 5px 0;
+            padding: 15px;
+
+            a {
+              color: white;
+            }
+
+            &:last-child {
+              background-color: $blue;
+              margin-right: 15px;
+              a {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.contact-section {
+      .collapse.navbar-collapse {
+        display: flex;
+        justify-content: flex-end;
+
+        ul {
+          li {
+            // padding: 5px 0;
+            padding: 15px;
+
+            a {
+              color: $shadow;
+            }
+
+            &:last-child {
+              background-color: $blue;
+              margin-right: 15px;
+              a {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // @media (min-width: $lg) {
 //   .mod-navbar {
