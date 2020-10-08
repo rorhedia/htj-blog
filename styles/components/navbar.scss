@@ -2,8 +2,21 @@
   position: sticky;
   top: -1px;
   z-index: 10;
-  // background-color: $shadow;
-  // opacity: 0.97;
+
+  &.bg-color {
+    background-color: $shadow;
+    // background-color: #AD310B;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+  }
+
+  &.bg-color-white {
+    background-color: white;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+  }
 
   .logo-white {
     width: 100px;

@@ -1,0 +1,77 @@
+.contact-container {
+  background-image: url("../../public/images/hero-contacto-01.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .comp-title {
+    padding: 15px;
+    margin-top: 50px;
+  }
+
+  .header-title {
+    color: $shadow;
+    font-weight: 900;
+    font-size: 4em;
+  }
+
+  .comp-form {
+    width: 90%;
+  }
+
+  .btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .btn-comment-submit {
+      background-color: $blue;
+      color: white;
+      padding: 10px;
+      width: 80%;
+      font-size: 1.2em;
+
+      &:hover {
+        background-color: #067df7d4;
+      }
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  .contact-container {
+    .comp-title {
+      text-align: center;
+    }
+    .header-title {
+      color: $shadow;
+      font-weight: 900;
+      font-size: 5em;
+    }
+
+    .comp-form {
+      width: 50%;
+    }
+
+    .btn-container {
+      .btn-comment-submit {
+        background-color: $blue;
+        color: white;
+        padding: 10px;
+        width: 50%;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+@media (min-width: $xl) {
+  .comp-form {
+    width: 40%;
+  }
+}

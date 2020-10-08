@@ -1,20 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "../../components/Layout.jsx";
 import PostArticle from "../../components/PostArticle.jsx";
 import InputSearch from "../../components/InputSearch";
+import InputCheckbox from "../../components/InputCheckbox";
+import PopularPosts from "../../components/PopularPosts";
 
-import { getAllPosts } from "../../lib/services";
-function Blog({ res }) {
-  const { data: posts } = res;
+import {
+  getAllPosts,
+  getAllCategories,
+  getPopularPosts,
+} from "../../lib/services";
+function Blog({ posts, categories, popularPosts }) {
   const { articles, setArticles } = useState(posts);
 
-  const handleSearch = (data) => {
+  const handleSearch = async (data) => {
     console.log(data);
+    // let result = await searchPosts(data);
+    // console.log(result);
   };
-
-  useEffect(() => {
-    console.log("object");
-  }, []);
 
   return (
     <Layout>
@@ -55,12 +58,38 @@ function Blog({ res }) {
           </main>
 
           <aside className="col-12 col-md-4 aside-container">
-            <div classname="aside-search">
+            <div className="aside-search">
               <InputSearch
                 type="text"
                 placeholder="Buscar un artículo"
                 callback={handleSearch}
               />
+            </div>
+            <br />
+            <hr />
+
+            <div className="aside-filter">
+              <p className="font-weight-bold">Filtros</p>
+              {categories.length &&
+                categories.map(({ _id, name }, idx) => (
+                  <InputCheckbox key={idx} id={_id} name={name} />
+                ))}
+            </div>
+            <br />
+            <hr />
+
+            <div className="aside-popular-posts">
+              <p className="font-weight-bold">Top 5 destacados</p>
+              {popularPosts.length &&
+                popularPosts.map(({ _id, title, created }, idx) => (
+                  <PopularPosts
+                    key={_id}
+                    id={_id}
+                    position={idx}
+                    title={title}
+                    created={created}
+                  />
+                ))}
             </div>
           </aside>
         </div>
@@ -70,9 +99,15 @@ function Blog({ res }) {
 }
 
 Blog.getInitialProps = async (ctx) => {
-  const res = await getAllPosts();
+  let posts = await getAllPosts();
+  let categories = await getAllCategories();
+  let popularPosts = await getPopularPosts();
 
-  return { res };
+  posts = posts.success === true ? posts.data : {};
+  categories = categories.success === true ? categories.data : {};
+  popularPosts = popularPosts.success === true ? popularPosts.data : {};
+
+  return { posts, categories, popularPosts };
 };
 
 export default Blog;
