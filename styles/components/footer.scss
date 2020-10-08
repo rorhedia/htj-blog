@@ -1,0 +1,141 @@
+.footer-container {
+  background-color: $shadow;
+  color: $white;
+  padding: 0 0 30px 0;
+  //   border: solid red 1px;
+
+  .mod-contact-us {
+    background-image: url("../../public/images/hero-contacto-01.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    // padding: 0 0 0 25px;
+
+    .text-header-contact {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .btn-contact {
+      background-color: $blue;
+      padding: 10px;
+      text-decoration: none;
+      // border-radius: 5px;
+      border: none;
+      color: white;
+      // font-size: 1em;
+      width: 110px;
+    }
+  }
+
+  .footer-section-img-1 {
+    // height: 100%;
+    width: 100%;
+    // border: solid red 1px;
+    padding: 0;
+
+    img {
+      // border: solid red 1px;
+      width: 50%;
+      //   margin-left: 20px;
+    }
+  }
+
+  .footer-section-img-2,
+  .footer-section-img-3,
+  .footer-section-img-4 {
+    display: none;
+
+    img {
+      width: 70px;
+    }
+  }
+
+  .footer-section-bullets-1,
+  .footer-section-bullets-2,
+  .footer-section-bullets-3,
+  .footer-section-bullets-4 {
+    margin: 20px 0 0 0;
+  }
+
+  .footer-section-bullets-1 {
+    padding: 0 0 0 35px;
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+    display: none;
+    // border: solid red 1px;
+
+    .social-media {
+      //   border: solid red 1px;
+      width: auto;
+      height: 25px;
+      margin: 0 8px;
+
+      &.fb {
+        height: 30px;
+      }
+    }
+  }
+
+  .logos-footer {
+    max-width: 23%;
+  }
+}
+
+@media (min-width: $md) {
+  .footer-section-img-1 {
+    // height: 100%;
+    // width: 100%;
+    // border: solid red 1px;
+    // padding: 0;
+
+    img {
+      // border: solid red 1px;
+      //   width: 50%;
+      margin-left: 20px;
+    }
+  }
+
+  .footer-container {
+    .mod-contact-us {
+      background-image: url("../../public/images/hero-contacto-01.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+      height: 35vh;
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 25px;
+
+      .text-header-contact {
+        font-size: 4em;
+        font-weight: bold;
+      }
+
+      .btn-contact {
+        background-color: $blue;
+        padding: 10px;
+        // border-radius: 5px;
+        border: none;
+        color: white;
+        font-size: 1.2em;
+        width: 150px;
+      }
+    }
+
+    .footer-section-img-1,
+    .footer-section-img-2,
+    .footer-section-img-3,
+    .footer-section-img-4 {
+      display: block;
+    }
+
+    .footer-section-bullets-1 {
+      display: block;
+    }
+  }
+}

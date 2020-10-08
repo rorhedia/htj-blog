@@ -4,6 +4,7 @@ import PostArticle from "../../components/PostArticle.jsx";
 import InputSearch from "../../components/InputSearch";
 import InputCheckbox from "../../components/InputCheckbox";
 import PopularPosts from "../../components/PopularPosts";
+// import Footer from "../../components/Footer";
 
 import {
   getAllPosts,
@@ -94,6 +95,7 @@ function Blog({ posts, categories, popularPosts }) {
           </aside>
         </div>
       </section>
+
     </Layout>
   );
 }
