@@ -99,8 +99,8 @@ function Blog({ posts, categories, popularPosts }) {
 }
 
 Blog.getInitialProps = async (ctx) => {
-  let posts = await getAllPosts();
-  let categories = await getAllCategories();
+  let posts        = await getAllPosts();
+  let categories   = await getAllCategories();
   let popularPosts = await getPopularPosts();
 
   posts = posts.success === true ? posts.data : {};
